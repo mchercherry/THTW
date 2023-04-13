@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --b: #292820;
+  --w: #F9F8F1;
+  --t: #F2EBD5;
+  --r: #541212;
+  --y: #FADE3C;
+  --yl: #EDE1A1;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Brygada 1918', serif;
+  font-weight: 400;
+  background-color: var(--r);
+}
+
+/** Navigation Sillies **/
+.navigation {
+    background: var(--r);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    min-height: 7.5rem;
+  }
+
+  .logo {
+  margin-top: 1em;
+  padding: 20px;
+  height: 100px;
+  }
+
+.nav-toggle {
+    display: none;
+  }
+  
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-toggle-label span {
+    color: var(--yl);
+    font-size: 1.5em;
+  }
+  
+  nav {
+    position: absolute;
+    text-align: right;
+    top: 100%;
+    right: 0;
+    background: var(--r);
+    width: 100%;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 15px;
+    list-style: none;
+  }
+  
+  nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  
+  nav a {
+    color: var(--y);
+    text-decoration: none;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+  
+  nav a:hover {
+    color: var(--yl);
+  }
+  
+  .nav-toggle:checked ~ nav {
+     transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+
+  /** .listbull {
+    display: none; 
+  } **/
+/** End Navigation Sillies **/
+
+
+
+@media screen and (min-width: 850px) {
+  
+    /** Navigation Sillies **/
+    .nav-toggle-label {
+      display: none;
+    }
+    
+  .navigation {
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px, 6fr) 1fr;
+    }
+    
+    .logo {
+      grid-column: 2/8;
+    }
+
+    nav {
+        all:unset;
+        grid-column: 2/4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      
+      nav ul {
+        display: flex;
+        justify-content: flex-end;
+      }
+      
+      nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+      }
+      
+      nav a {
+        opacity: 1;
+        position: relative;
+      }
+      
+      nav a::before {
+        content:"";
+        display: block;
+        height: 2px;
+        background: var(--y);
+        position: absolute;
+        top: 1.5em;
+        left: 0;
+        right: 0;
+        transform: scale(0,.5);
+        transform-origin: center;
+        transition: transform ease-in-out 300ms;
+      }
+      
+      nav a:hover::before {
+        transform: scale(1,.5);
+      }
+
+      /** .listbull {
+        display: block;
+      } **/
+      /** End Navigation Sillies **/
+
+}
