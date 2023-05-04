@@ -9,6 +9,12 @@
   --yl: #EDE1A1;
 }
 
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+ }
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -16,9 +22,79 @@
 
 body {
   margin: 0;
+  background-color: var(--r);
+}
+
+p {
   font-family: 'Brygada 1918', serif;
   font-weight: 400;
-  background-color: var(--r);
+  line-height: 150%;
+  font-size: 14px;
+  color: var(--b);
+  padding: 0px 15px 20px 25px;
+}
+
+.captcha {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--w);
+  font-size: 16px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  color: var(--y);
+  line-height: 150%;
+  padding: 20px 15px 5px 25px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 35px;
+  color: var(--b);
+  padding: 20px 15px 5px 25px;
+  text-align: left;
+}
+
+.ytext {
+  color: var(--y);
+}
+
+.button {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 50px;
+  font-weight: 600;
+  color: var(--b);
+  padding: 12px;
+  background-color: var(--y);
+  border-radius: 7px;
+  text-align: center;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.button:hover {
+  background-color: var(--yl);
+  color: var(--r);
+  cursor: pointer;
+}
+
+.reverse {
+  background-color: transparent;
+  border: var(--y) solid 3px;
+  color: var(--y);
+  transition: .3s;
+}
+
+.reverse:hover {
+  background-color: transparent;
+  border-color: var(--yl);
+  color: var(--yl);
+  cursor: pointer;
 }
 
 /** Navigation Sillies **/
@@ -100,12 +176,126 @@ body {
     transition: opacity 250ms ease-in-out 250ms;
   }
 
-  /** .listbull {
-    display: none; 
-  } **/
+  .message {
+    background: var(--nav);
+    min-height: 7.5rem;
+    width: 100%;
+  }
+  
+  .sc {
+    color: var(--w);
+    text-align: center;
+  }
+
 /** End Navigation Sillies **/
 
+.hero {
+  height: 60vh;
+  width: 100%;
+  background-image: url(images/Section/Hero.png);
+  background-repeat: none;
+  background-size: cover;
+  background-position: right;
+}
 
+.heroboxa {
+  display: none;
+}
+
+.hhero {
+  color: var(--w);
+  text-align: left;
+}
+
+.phero {
+  color: var(--w);
+  font-weight: bold;
+}
+
+/** Section Sillies **/
+
+.section {
+  background-color: var(--w);
+}
+
+.beige {
+   background-color: var(--t);
+}
+
+.secImg {
+  width: 100%;
+}
+
+.contentType, .content2, .contentType2, .rcards, .rcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.camp, .imgBox {
+  width: 60vw;
+  padding: 0;
+  margin: 0;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.imgBox {
+  background-color: var(--r);
+}
+
+.camp {
+  transition: .3s;
+}
+
+.camp:hover {
+  opacity: .5;
+  cursor: pointer;
+}
+
+.bpad {
+  padding-bottom: 20px;
+}
+
+.rcard {
+  background: var(--w);
+  width: 80vw;
+  margin-bottom: 30px;
+}
+
+.rrr {
+  width: 80vw;
+}
+
+.hcenter {
+  text-align: center;
+}
+
+.rr {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/** Footer Time **/
+
+footer, .f1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.foot {
+  font-style: italic;
+  font-weight: 200;
+  color: var(--y);
+  padding: 5px;
+}
+
+.f1, .f2 {
+  padding: 10px;
+}
 
 @media screen and (min-width: 850px) {
   
@@ -164,9 +354,88 @@ body {
         transform: scale(1,.5);
       }
 
-      /** .listbull {
+      /* Navigation Sillies End */
+
+      .hero {
+        position: relative;
+        height: 70vh;
+      }
+
+      .heroboxb {
+        display: none;
+      }
+
+      .heroboxa {
         display: block;
-      } **/
-      /** End Navigation Sillies **/
+        position: absolute;
+        background-color: rgba(84, 18, 18, .5);
+        width: 45vw;
+        bottom: 0;
+        left: 0;
+      }
+
+      .phero, .hhero {
+        padding-left: 50px;
+      }
+
+      .phero {
+        padding-bottom: 30px;
+      }
+
+      .hhero {
+        padding-bottom: 0;
+      }
+
+      /** Section Sillies **/
+
+      .sectionHead {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0 20px 0;
+      }
+
+      .type {
+        width: 60vw;
+      }
+
+      .secImg {
+        width: 30vw;
+      }
+
+      .card, .content {
+        display: flex;
+        align-items: center;
+        justify-content:center;
+      }
+
+      .flexr {
+        flex-direction: row-reverse;
+      }
+
+      .contentType {
+        width: 30vw;
+      }
+
+      .card {
+        padding: 50px 0 50px 0;
+      }
+
+      .imgGallery {
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 20px;
+      }
+
+      .space  {
+        width: 2vw;
+      }
+
+      .camp, .imgBox {
+        width: 20vw;
+        margin-bottom: 0;
+      }
+
 
 }
