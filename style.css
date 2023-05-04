@@ -325,6 +325,7 @@ footer {
     
     .logo {
       grid-column: 2/8;
+      margin-left: 0;
     }
 
     nav {
