@@ -109,6 +109,7 @@ h2 {
 
   .logo {
   margin-top: 1em;
+  margin-left: -45%;
   padding: 20px;
   height: 100px;
   }
@@ -272,6 +273,11 @@ h2 {
   text-align: center;
 }
 
+.padt {
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
 .rr {
   padding-left: 50px;
   padding-right: 50px;
@@ -286,15 +292,23 @@ footer, .f1 {
   justify-content: center;
 }
 
+footer {
+  padding-top: 20px;
+  padding-bottom: 3px;
+}
+
+.f1 {
+  width: 85vw;
+}
+
 .foot {
   font-style: italic;
   font-weight: 200;
   color: var(--y);
-  padding: 5px;
 }
 
-.f1, .f2 {
-  padding: 10px;
+.topf {
+  padding-bottom: 15px;
 }
 
 @media screen and (min-width: 850px) {
@@ -433,9 +447,33 @@ footer, .f1 {
       }
 
       .camp, .imgBox {
-        width: 20vw;
+        width: 25vw;
         margin-bottom: 0;
       }
 
+      .rcards {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-bottom: 30px;
+      }
 
+      .rcard, .rrr {
+        width: 27vw;
+        margin: 0;
+      }
+
+      /** Footer Time **/
+
+      footer {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .f1 {
+        width: 30vw;
+      }
 }
